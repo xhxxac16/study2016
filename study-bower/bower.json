@@ -1,0 +1,27 @@
+{
+  "name": "study-bower",
+  "authors": [
+    "amanda <xhxxac16@163.com>"
+  ],
+  "description": "学习",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "学习bower"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1"
+  }
+}
