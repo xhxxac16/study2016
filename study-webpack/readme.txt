@@ -4,3 +4,21 @@ loaders 指定 jsx-loader 编译后缀名为 .jsx 的文件，建议给含有 JS
 
 
 监听编译: webpack -d --watch
+
+https://segmentfault.com/a/1190000003768578
+一、 npm init 会自动生成 package.json
+二、npm install webpack --save-dev 本地安装webpack
+
+
+
+
+项目目录
+/app
+	main.js
+	component.js
+/build
+	bundle.js (自动创建)
+	index.html
+
+package.json
+webpack.config.js
