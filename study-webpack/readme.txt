@@ -8,9 +8,12 @@ loaders 指定 jsx-loader 编译后缀名为 .jsx 的文件，建议给含有 JS
 https://segmentfault.com/a/1190000003768578
 一、 npm init 会自动生成 package.json
 二、npm install webpack --save-dev 本地安装webpack
-
-
-
+三、npm install webpack-dev-server --save
+四、npm install react --save
+五、npm install babel-loader --save-dev
+六、npm install babel-preset-react
+运行
+npm run dev
 
 项目目录
 /app
@@ -22,3 +25,18 @@ https://segmentfault.com/a/1190000003768578
 
 package.json
 webpack.config.js
+
+
+package.json
+{
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  }
+}
+上述配置顶的意义：
+1、webpack-dev-server - 在 localhost:8080 建立一个 Web 服务器
+3、devtool eval - 为你的代码创建源地址。当有任何报错的时候可以让你更加精确地定位到文件和行号
+4、progress - 显示合并代码进度
+5、colors - 命令行中显示颜色！
+6、content-base build - 指向设置的输出目录
