@@ -7,3 +7,11 @@
 下边是完成学习列表：
 
 2016.02.28 - Day 1: Bower——管理你的客户端依赖关系  study-bower/
+
+
+
+
+
+http://nodeschool.io/
+一边看英文，一边练习
+2016.03.04 - Day 1: javascripting
