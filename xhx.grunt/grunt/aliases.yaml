@@ -1,0 +1,24 @@
+
+
+dev:
+  - 'express:dev'
+  - 'open:dev'
+  - 'watch:dev'
+  - 'svg_sprite:dev'
+
+
+
+app:
+  - 'clean:app'
+  - 'copy:copy_dev_html_to_pub'
+  - 'copy:copy_dev_css_to_pub'
+  - 'uglify:app'
+  - 'cssmin:app'
+  - 'imagemin'
+  - 'express:app'
+  - 'open:app'
+  - 'watch:app'
+
+
+clear:
+  - 'clean:app'
