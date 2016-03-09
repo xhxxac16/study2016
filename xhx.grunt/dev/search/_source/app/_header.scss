@@ -1,0 +1,78 @@
+.header{
+	$val:(
+			height:100px,
+			bgcolor-begin:#0094f8,
+			bgcolor-end:rgba(0,182,243,.55)
+		);
+	overflow:hidden;
+	@extend %borderbox;
+	display:block;
+	@include convert-to-calc(padding,0, map-get($global,padding-left));
+	@include gra(map-get($val,bgcolor-begin),map-get($val,bgcolor-end));
+	
+	.logo{
+		$val:(
+			margin-right:25px,
+			padding-top:23px,
+			width:146px,
+			height:54px
+			);
+		float:left;
+		@include convert-to-calc(padding,map-get($val,padding-top),0);
+		@include convert-to-calc(margin-right,map-get($val,margin-right));
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(line-height,map-get($val,height));
+		img{
+			display:block;
+			width:100%;
+			height:100%;
+		}
+	}
+	.city{
+		$val:(
+			margin-right:10px,
+			padding-top:23px,
+			height:54px,
+			color:#fff,
+			font-size:28px
+			);
+		float:left;
+		@include convert-to-calc(padding,map-get($val,padding-top),0);
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		color:map-get($val,color);
+		white-space:nowrap;
+		@include convert-to-calc(line-height,map-get($val,height));
+		
+		em{
+			@include convert-to-calc(margin-right,map-get($val,margin-right));
+		}
+	}
+	.icon-arrow-dn{
+		// $val:(
+		// 		width:10px,
+		// 		border-width:2px,
+		// 		color:#fff,
+		// 		border-radius:2px
+		// 	);
+		// @include borderArrow(map-get($val,width),map-get($val,border-width),map-get($val,color),map-get($val,border-radius));
+		// transform:rotate(45deg);
+		@include inline-block;
+		@include iconItem($skin,"arrow-dn");
+	}	
+	.member{
+		$val:(
+			padding-top:30px,
+			padding-left:7px,
+			height:40px
+		);
+		float:right;
+		@include convert-to-calc(padding,map-get($val,padding-top),map-get($val,padding-left));
+		@include convert-to-calc(height,map-get($val,height));
+		.icon-member{
+			float:right;
+			@include iconItem($skin,"icon-member");
+		}
+	}
+}

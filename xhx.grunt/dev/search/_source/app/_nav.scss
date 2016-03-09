@@ -1,0 +1,145 @@
+%icon-nav{
+	$val:(
+		padding-bottom:19px,
+		width:117px,
+		height:108px,
+		border-top-radius:6px,
+		border-bottom-radius:4px
+		);
+	margin:0 auto;
+	@include convert-to-calc(padding-bottom,map-get($val,padding-bottom));
+	@include convert-to-calc(width,map-get($val,width));
+	@include convert-to-calc(height,map-get($val,height));
+	@include boxShadow(0 2px 6px rgba(0,0,0,.08));
+	border-radius:map-get($val,border-top-radius) map-get($val,border-top-radius) map-get($val,border-bottom-radius) map-get($val,border-bottom-radius);
+	.tit{
+		$val:(
+			padding-top:12px,
+			padding-left:52px,
+			height:45px,
+			font-size:20px
+		);
+		display:block;
+		position:relative;
+		@include convert-to-calc(padding,map-get($val,padding-top),0,0,map-get($val,padding-left));
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		text-align:left;
+		em{
+			$val:(
+				top:10px,
+				left:16px,
+				font-size:32px
+				);
+			position:absolute;
+			@include convert-to-calc(top,map-get($val,top));
+			@include convert-to-calc(left,map-get($val,left));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+		}
+	}
+	i{
+		$val:(
+			margin-left:24px,
+			);
+		display:block;
+		@include convert-to-calc(margin,0,0,0,map-get($val,margin-left));
+	}
+}
+
+$bgColor:(
+	look-color:#fd8d39,
+	buy-color:#2fabf1,
+	own-color:#6dc114,
+	sale-color:#1fd2c7,
+	member-color:#fd595a
+	);
+
+.nav{
+	$val:(
+		margin-top:25px,
+		margin-bottom:16px,
+		padding-left:16px
+		);
+	$fontVal:(
+		icon-color:#fff,
+		text-color:#666
+		);
+	@include convert-to-calc(margin,map-get($val,margin-top),0,map-get($val,margin-bottom));
+	@include convert-to-calc(padding,0,map-get($val,padding-left));
+	ul{
+		@extend %clearfix;
+		@extend %borderbox;
+		width:100%;
+	}
+	li{
+		float:left;
+		width:20%;
+		text-align:center;
+	}
+	a{
+		display:block;
+		margin:0 auto;
+		.icon-nav{
+			color:map-get($fontVal,icon-color);
+		
+		}
+		.txt{
+			color:map-get($fontVal,text-color);
+		}
+	}
+	.txt{
+		$val:(
+			height:56px
+			);
+		display:block;
+		@include convert-to-calc(height,map-get($val,height));
+		text-align:center;
+		@include convert-to-calc(line-height,map-get($val,height));
+	}
+	.look-car{
+		.icon-nav{
+			@extend %icon-nav;
+			background-color:map-get($bgColor,look-color);
+		}
+		i{
+			@include iconItem($skin,"icon-nav-look");
+		}
+	}
+	.buy-car{
+		.icon-nav{
+			@extend %icon-nav;
+			background-color:map-get($bgColor,buy-color);
+		}
+		i{
+			@include iconItem($skin,"icon-nav-buy");
+		}
+	}
+	.own-car{
+		.icon-nav{
+			@extend %icon-nav;
+			background-color:map-get($bgColor,own-color);
+		}
+		i{
+			@include iconItem($skin,"icon-nav-own");
+		}
+	}
+	.sale-car{
+		.icon-nav{
+			@extend %icon-nav;
+			background-color:map-get($bgColor,sale-color);
+		}
+		i{
+			@include iconItem($skin,"icon-nav-sale");
+		}
+	}
+	.member{
+		.icon-nav{
+			@extend %icon-nav;
+			background-color:map-get($bgColor,member-color);
+		}
+		i{
+			@include iconItem($skin,"icon-nav-member");
+		}
+	}
+}
+

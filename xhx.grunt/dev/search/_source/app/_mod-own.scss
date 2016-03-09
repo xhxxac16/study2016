@@ -1,0 +1,117 @@
+.mod-own{
+	@extend %mod;
+	.hd{
+		i{
+			background-color:map-get($bgColor,own-color);
+		}
+		.a-more{
+			color:map-get($bgColor,own-color);
+		}
+	}
+}
+
+.own-list{
+		$val:(
+		padding-top:1px,
+		padding-left:4px,
+		padding-bottom:3px
+		);
+	@extend %clearfix;
+	@include convert-to-calc(padding,map-get($val,padding-top),map-get($val,padding-left),map-get($val,padding-bottom));
+	li{
+		$val:(
+			padding-top:3px,
+			padding-left:2px
+			);
+		float:left;
+		@extend %borderbox;
+		width:49.8%;
+		@include convert-to-calc(padding,map-get($val,padding-top),map-get($val,padding-left));
+		&:nth-child(2n){
+			float:right;
+		}
+	}
+	a{
+		$val:(
+			height:126px,
+			color:#fff
+			);
+		@extend %flexbox;
+		overflow:hidden;
+		width:100%;
+		@include convert-to-calc(height,map-get($val,height));
+		background-color:map-get($bgColor,own-color);
+		color:map-get($val,color);
+		span{
+			display:block;
+		}
+	}
+	.icon-box{
+		$val:(
+			padding-top:20px,
+			padding-left:44px,
+			width:94px
+			);
+		@extend %flexbox;
+		@extend %verticalCenter;
+		@include convert-to-calc(padding-top,map-get($val,padding-top));
+		@include convert-to-calc(padding-bottom,map-get($val,padding-top));
+		@include convert-to-calc(padding-left,map-get($val,padding-left));
+		@include convert-to-calc(width,map-get($val,width));
+		i{
+			@include inline-block;
+		}
+	}
+	.txt{
+		$val:(
+			padding-top:22px
+			);
+		@include convert-to-calc(padding-top,map-get($val,padding-top));
+	}
+	.tit{
+		$val:(
+			height:50px,
+			font-size:36px
+			);
+		overflow:hidden;
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		font-weight:700;
+		@include convert-to-calc(line-height,map-get($val,height));
+	}
+	.desc{
+		$val:(
+			height:30px,
+			color:#EAEA12,
+			font-size:20px
+			);
+		overflow:hidden;
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		@include convert-to-calc(line-height,map-get($val,height));
+		em{
+			color:map-get($val,color);	
+		}
+	}
+}
+
+.own-book{
+	$val:(
+		margin-top:10px
+		);
+	@include convert-to-calc(margin,map-get($val,margin-top),0);
+	@include iconItem($skin,"icon-own-book");
+}
+.own-handbook{
+	@include iconItem($skin,"icon-own-handbook");
+}
+.own-ticket{
+	@include iconItem($skin,"icon-own-ticket");
+}
+.own-place{
+	$val:(
+		margin-top:10px
+		);
+	@include convert-to-calc(margin,map-get($val,margin-top),0);
+	@include iconItem($skin,"icon-own-place");
+}

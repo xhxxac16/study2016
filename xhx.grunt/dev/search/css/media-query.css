@@ -1,0 +1,11 @@
+ /* 像素比为1，链入100px的图片， background-size：100% */
+.header { background: url(Logo_1.png) no-repeat; }
+/*像素比为1.5，链入150px的图片， background-size：1/1.5=66.7% */
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .header { background: url(Logo_1-5.png) no-repeat; background-size:66.7%; }
+}
+/*像素比为2，链入200px的图片， background-size：1/2=50% */
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    .header { background: url(Logo_2-0.png) no-repeat; background-size: 50%;}
+}
+.w100{width:100px;height:100px;}

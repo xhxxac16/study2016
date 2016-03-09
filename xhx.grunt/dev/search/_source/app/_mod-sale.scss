@@ -1,0 +1,191 @@
+.mod-sale{
+	@extend %mod;
+	.hd{
+		i{
+			background-color:map-get($bgColor,sale-color);
+		}
+		.a-more{
+			color:map-get($bgColor,sale-color);
+		}
+	}
+	.bd{
+		$val:(
+			padding-top:20px,
+			padding-left:32px,
+			padding-bottom:20px,
+			);
+		@include convert-to-calc(padding,map-get($val,padding-top),map-get($val,padding-left),map-get($val,padding-bottom));
+	}
+}
+
+.sale-intro{
+	$val:(
+		margin-bottom:20px,
+		padding-left:20px,
+		height:40px,
+		font-size:19px,
+		color:#6f6f6f
+		);	
+	@include convert-to-calc(margin-bottom,map-get($val,margin-bottom));	
+	@include convert-to-calc(padding,0,map-get($val,padding-left));
+	@include convert-to-calc(font-size,map-get($val,font-size));
+	color:map-get($val,color);
+	@include convert-to-calc(line-height,map-get($val,height));
+	.tit{
+		$val:(
+			margin-bottom:30px,
+			height:60px,
+			font-size:48px
+			);
+		@include convert-to-calc(margin-bottom,map-get($val,margin-bottom));	
+		@include convert-to-calc(font-size,map-get($val,font-size));	
+		@include convert-to-calc(line-height,map-get($val,height));
+		font-weight:700;
+	}
+	.progress{
+		// @extend %flexbox;
+		@extend %clearfix;
+		justify-content:space-between;
+		margin:0 auto;
+		li{
+			float:left;
+			width:19%;
+			text-align:center;
+			i{
+				display:block;
+				margin:0 auto;
+			}
+			&.split{
+				$val:(
+					width:70px,
+					height:90px
+					);
+				// @extend %flexbox;
+				// @extend %verticalCenter;
+				// @extend %horizontalCenter;
+				width:8%;
+				// @include convert-to-calc(min-width,map-get($val,width));
+				@include convert-to-calc(height,map-get($val,height));
+				@include convert-to-calc(line-height,map-get($val,height));
+				white-space:nowrap;
+				font-size:0;
+				i{
+					$val:(
+						margin-left:2px,
+						width:5px,
+						height:5px,
+						border-radius:5px,
+						background-color:#d7d7d7
+						);
+					@include inline-block;
+					overflow:hidden;
+					// @include convert-to-calc(margin,0,map-get($val,margin-left));
+					// @include convert-to-calc(width,map-get($val,width));
+					// @include convert-to-calc(height,map-get($val,height));
+					margin:0 map-get($val,margin-left);
+					width:map-get($val,width);
+					height:map-get($val,height);
+					border-radius:100%;
+					background-color:map-get($val,background-color);
+				}
+			}
+		}
+		.txt{
+			$val:(
+				margin-top:10px
+				);
+			@include convert-to-calc(margin-top,map-get($val,margin-top));	
+		
+
+		}
+	}
+}
+.sale-book{
+	@include iconItem($skin,"icon-sale-book");
+}
+.sale-check{
+	@include iconItem($skin,"icon-sale-check");
+}
+.sale-price{
+	@include iconItem($skin,"icon-sale-price");
+}
+.sale-deal{
+	@include iconItem($skin,"icon-sale-deal");
+}
+
+.btn-sale-area{
+	$val:(
+		margin-bottom:20px,
+		height:90px,
+		font-size:36px
+		);
+	@extend %clearfix;
+	@include convert-to-calc(margin-bottom,map-get($val,margin-bottom));
+	@include convert-to-calc(font-size,map-get($val,font-size));
+	@include convert-to-calc(line-height,map-get($val,height));
+	text-align:center;
+	.btn-sale{
+		$val:(
+			width:410px,
+			height:90px,
+			border-radius:6px,
+			color:#fff
+			);
+		float:left;
+		// @include convert-to-calc(width,map-get($val,width));
+		width:60%;
+		@include convert-to-calc(height,map-get($val,height));
+		background-color:map-get($bgColor,sale-color);
+		border-radius:map-get($val,border-radius);
+		color:map-get($val,color);
+		
+	}
+	.btn-strategy{
+		$val:(
+			width:244px,
+			height:90px,
+			border-width:3px,
+			border-radius:6px
+			);
+		@extend %borderbox;
+		float:right;
+		width:38%;
+		// @include convert-to-calc(min-width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		border-radius:map-get($val,border-radius);
+		border:solid map-get($bgColor,sale-color);
+		@include convert-to-calc(border-width,map-get($val,border-width));
+		border-width:rem-calc(map-get($val,border-width));
+		color:map-get($bgColor,sale-color);
+	}
+}
+
+.sale-place{
+	$val:(
+		height:60px
+		);
+	@include convert-to-calc(height,map-get($val,height));
+	@include convert-to-calc(line-height,map-get($val,height));
+	dt{
+		$val:(
+			margin-right:40px,
+			color:#8a8a8a,
+			font-size:26px
+			);
+		float:left;
+		@include convert-to-calc(margin-right,map-get($val,margin-right));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		color:map-get($val,color);
+	}
+	dd{
+		$val:(
+			font-size:28px
+			);
+		overflow:hidden;
+		zoom:1;
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		.a-place{
+			color:map-get($bgColor,sale-color);
+		}
+	}
+}

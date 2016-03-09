@@ -1,0 +1,131 @@
+.mod-recommend{
+	$val:(
+		margin-bottom:30px,
+		background-color:#fff
+		);
+	@include convert-to-calc(margin-bottom,map-get($val,margin-bottom));
+	background-color:map-get($val,background-color);
+	@include boxShadow(0 2px 6px rgba(0,0,0,.08));
+	
+	.hd{	
+		$val:(
+			height:59px,
+			color:#8a8a8a,
+			font-size:28px
+			);
+		@include convert-to-calc(padding,0,map-get($global,padding-left));
+		@include convert-to-calc(line-height,map-get($val,height));
+		color:map-get($val,color);
+	}
+	.bd{
+		@include convert-to-calc(padding,0,map-get($global,padding-left));
+	}
+
+	.a-more{
+		$val:(
+			height:88px,
+			border-color:#e6e6e6,
+			color:#56606d,
+			font-size:28px
+			);
+		display:block;
+		@include convert-to-calc(height,map-get($val,height));
+		border-top:1px solid map-get($val,border-color);
+		color:map-get($val,color);
+		text-align:center;
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		@include convert-to-calc(line-height,map-get($val,height));
+		
+	}
+}
+
+.recommend-list{
+	li{
+		$val:(
+			border-color:#e6e6e6
+			);
+		border-top:1px solid map-get($val,border-color);
+		&:first-child{
+			border-top:0 none;
+		}
+	}
+	a{
+		$val:(
+			padding-top:10px
+			);
+		@extend %clearfix;
+		display:block;
+		@include convert-to-calc(padding,map-get($val,padding-top),0);
+	}
+	.img-box{
+		$val:(
+			margin-right:22px,
+			width:219px,
+			height:192px
+			);
+		float:left;
+		@include convert-to-calc(margin-right,map-get($val,margin-right));
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		@extend %flexbox;
+		@extend %verticalCenter;
+		img{
+			display:block;
+			width:100%;
+			height:auto;
+			max-height:100%;
+		}
+	}
+	.info{
+		$val:(
+				margin-top:30px,
+				color:#2f2f2f
+			);
+		overflow:hidden;
+		zoom:1;
+		@include convert-to-calc(margin-top,map-get($val,margin-top));
+		color:map-get($val,color);			
+		text-align:left;
+		dd{
+			overflow:hidden;
+		}
+		.tit{
+			$val:(
+				height:40px,
+				font-size:28px
+				);
+			overflow:hidden;
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+			@include convert-to-calc(line-height,map-get($val,height));
+		
+		}
+		.desc{
+			$val:(
+				margin-top:15px,
+				height:36px
+				);
+			@include convert-to-calc(margin,map-get($val,margin-top),0);
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(line-height,map-get($val,height));
+			em{
+				$val:(
+					color:#ff6d00,
+					font-size:36px
+					);
+				color:map-get($val,color);
+				@include convert-to-calc(font-size,map-get($val,font-size));
+					
+			}
+		}
+		.price{
+			$val:(
+				height:30px,
+				color:#999
+				);
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(line-height,map-get($val,height));
+			color:map-get($val,color);			
+		}
+	}
+}

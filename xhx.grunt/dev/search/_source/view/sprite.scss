@@ -1,0 +1,34 @@
+%svg-common {
+	background: url("svg/sprite.view.svg") no-repeat;
+}
+
+.svg-dev--search--images--_svg_icon--clock2 {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-dev--search--images--_svg_icon--clock2-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-dev--search--images--_svg_icon--map {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg-dev--search--images--_svg_icon--map-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-dev--search--images--_svg_icon--printer {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+.svg-dev--search--images--_svg_icon--printer-dims {
+	width: 16px;
+	height: 16px;
+}
+

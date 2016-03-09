@@ -1,0 +1,57 @@
+.mod-look{
+	@extend %mod;
+	.hd{
+		i{
+			background-color:map-get($bgColor,look-color);
+		}
+		.a-more{
+			color:map-get($bgColor,look-color);
+		}
+	}
+}
+
+.brand-list{
+	@extend %clearfix;
+	@extend %borderbox;
+	width:100%;
+	li{
+		$val:(
+			margin-top:24px
+			);
+		float:left;
+		@include convert-to-calc(margin-top,map-get($val,margin-top));
+		width:20%;
+		a{
+			$val:(
+				height:123px,
+				color:#999
+				);
+			display:block;
+			@include convert-to-calc(height,map-get($val,height));		
+			color:map-get($val,color);
+		}
+		img{
+			$val:(
+				width:79px,
+				height:79px
+				);
+			display:block;
+			margin:0 auto;
+			@include convert-to-calc(width,map-get($val,width));
+			@include convert-to-calc(height,map-get($val,height));
+		}
+		span{
+			$val:(
+				height:44px,
+				font-size:20px
+				);
+			overflow:hidden;
+			display:block;
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+			@include convert-to-calc(line-height,map-get($val,height));
+			text-align:center;
+		}
+
+	}
+}

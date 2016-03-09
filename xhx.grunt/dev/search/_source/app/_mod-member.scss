@@ -1,0 +1,102 @@
+.mod-member{
+	@extend %mod;
+	.hd{
+		i{
+			background-color:map-get($bgColor,member-color);
+		}
+		.a-more{
+			color:map-get($bgColor,member-color);
+		}
+	}
+	.bd{
+		$val:(
+			padding-top:22px,
+			padding-left:0,
+			padding-bottom:40px,
+			);
+		@include convert-to-calc(padding,map-get($val,padding-top),map-get($val,padding-left),map-get($val,padding-bottom));
+	}
+	.swiper-container{
+		$val:(
+			padding-left:60px
+			);
+		@include convert-to-calc(padding,0,map-get($val,padding-left));
+	
+	}
+	.swiper-button-prev{
+		$val:(
+			top:0,
+			left:0,
+			width:60px,
+			height:155px
+			);
+		top:0;
+		left:0;
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		margin-top:0;
+		background:#fff;
+		
+		@extend %flexbox;
+		@extend %horizontalCenter;
+		@extend %verticalCenter;
+		i{
+			@include inline-block;
+			@include iconItem($skin,"icon-arrow-left");
+		}
+	}
+	.swiper-button-next {
+		$val:(
+			top:0,
+			right:0,
+			width:60px,
+			height:155px
+			);
+		top:0;
+		right:0;
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		margin-top:0;
+		background:#fff;
+		
+		@extend %flexbox;
+		@extend %horizontalCenter;
+		@extend %verticalCenter;
+		i{
+			@include inline-block;
+			@include iconItem($skin,"icon-arrow-right");
+		}
+	
+	}
+}
+
+.member-list{
+	li{
+		text-align:center;
+	}
+	a{
+		$val:(
+			padding-top:10px
+			);
+		@include convert-to-calc(padding,map-get($val,padding-top),0);
+	}
+	img{
+		$val:(
+			width:95px,
+			height:95px
+			);
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+	}
+	.txt{
+		$val:(
+			height:60px,
+			color:#999
+			);
+		display:block;
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(line-height,map-get($val,height));
+		color:map-get($val,color);
+		text-align:center;
+	}
+}

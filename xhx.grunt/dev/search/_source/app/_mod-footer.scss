@@ -1,0 +1,64 @@
+.mod-footer{
+	$val:(
+		padding-top:38px,
+		height:192px,
+		border-color:#e6e6e6
+		);
+	@include convert-to-calc(padding-top,map-get($val,padding-top));
+	@include convert-to-calc(height,map-get($val,height));
+	border-top:1px solid map-get($val,border-color);
+	text-align:center;
+	ul{
+		@extend %flexbox;
+	}
+	li{
+		@include flexboxChild(1);
+	}
+	a{
+		$val:(
+			width:94px,
+			color:#56606d
+			);
+		display:block;
+		margin:0 auto;
+		@include convert-to-calc(width,map-get($val,width));
+		color:map-get($val,color);
+	}
+	.i-box{
+		$val:(
+			width:94px,
+			height:94px,
+			border-color:#a4a9b0,
+			border-width:3px
+			);
+		@extend %flexbox;
+		@extend %horizontalCenter;
+		@extend %verticalCenter;
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		border:solid map-get($val,border-color);
+		@include convert-to-calc(border-width,map-get($val,border-width));
+		border-width:rem-calc(map-get($val,border-width));
+		border-radius:100%;
+		i{
+			@include inline-block;
+		}
+	}
+	.txt{
+		$val:(
+			height:68px
+			);
+		display:block;
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(line-height,map-get($val,height));
+	}
+}
+.ver-client{
+	@include iconItem($skin,"icon-ver-client",$spacing:0,$spacing_w:0);
+}
+.ver-touch{
+	@include iconItem($skin,"icon-ver-touch",$spacing:0,$spacing_w:0);
+}
+.ver-computer{
+	@include iconItem($skin,"icon-ver-computer",$spacing:0,$spacing_w:0);
+}

@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* index.css
+ * Created: 2015-11-19
+ * Update: 2015-11-19
+ * Author: Amanda
+ */
+@import "libs/rem-calc",
+        "libs/vw-calc";
+@import "libs/mixin-css3";
+@import "libs/sprites";
+//====== variable
+$vw:false;//weixin not support
+$rem-base: 100px;
+// $max-breakpoint:750;
+$lte7:false;
+$img: "../images/";
+$version: 20151119; //css version
+$mediaArray: "only screen",
+    "only screen and (min-width: 320px) and (max-width: 359px)",
+    "only screen and (min-width: 360px) and (max-width: 399px)",
+    "only screen and (min-width: 400px) and (max-width: 479px)",
+    "only screen and (min-width: 480px) and (max-width: 639px)",
+    "only screen and (min-width: 640px) and (max-width: 749px)",
+    "only screen and (min-width: 750px)";
+
+$ratioFor300: $max-breakpoint/300;
+$ratioFor320: $max-breakpoint/320;
+$ratioFor360: $max-breakpoint/360;
+$ratioFor400: $max-breakpoint/400;
+$ratioFor480: $max-breakpoint/480;
+$ratioFor640: $max-breakpoint/640;
+$ratioFor750: $max-breakpoint/750;
+$htmSizeArray: floor($rem-base/$ratioFor300),
+               floor($rem-base/$ratioFor320),
+               floor($rem-base/$ratioFor360),
+               floor($rem-base/$ratioFor400),
+               floor($rem-base/$ratioFor480),
+               floor($rem-base/$ratioFor640),
+               floor($rem-base/$ratioFor750);
+
+
+//===== end variable
+// reset Element
+@import "libs/reset";
+// extend  %exam
+@import "components/extend";
+// common layout
+@import "components/common";
+
+
+// import mix components
+@import
+    "app/header",//logo/city/member
+    "app/header-city",
+    "app/animate",
+    "app/banner",
+    "app/act-box",
+    "app/nav",
+    "app/mod-look",
+    "app/mod-buy",
+    "app/mod-own",
+    "app/mod-sale",
+    "app/mod-member",
+    "app/mod-recommend",
+    "app/mod-login",
+    "app/mod-footer",
+    "app/pop-download";//download app
+
+
+// set responsive
+@for $mediaIndex from 1 to length($mediaArray) + 1 {
+    $media: nth($mediaArray, $mediaIndex);
+    $htmlFz: nth($htmSizeArray, $mediaIndex);
+    @media #{$media}
+    {
+        html {
+            font-size: $htmlFz;
+        }
+    }
+}

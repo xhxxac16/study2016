@@ -1,0 +1,23 @@
+.act-box{
+	$val:(
+		height:220px
+		);
+	@include convert-to-calc(height,map-get($val,height));
+	img{
+		width:100%;
+		height:auto;
+		@include convert-to-calc(max-height,map-get($val,height));
+	}
+}
+
+.act-member-box{
+	$val:(
+		height:352px
+		);
+	@include convert-to-calc(height,map-get($val,height));
+	img{
+		width:100%;
+		height:auto;
+		@include convert-to-calc(max-height,map-get($val,height));
+	}
+}

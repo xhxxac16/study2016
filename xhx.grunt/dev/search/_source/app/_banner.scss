@@ -1,0 +1,50 @@
+.banner{
+	$val:(
+		height:220px
+		);
+	@include convert-to-calc(max-height,map-get($val,height));
+	img{
+		width:100%;
+		height:auto;
+		@include convert-to-calc(max-height,map-get($val,height));
+	}
+	.swiper-slide{
+		background:#fff;
+		@extend %flexbox;
+		@extend %verticalCenter;
+		@extend %horizontalCenter;
+	}
+	&.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet{
+			$val:(
+			margin-left:4px
+			);
+		// @include convert-to-calc(margin,0,map-get($val,margin-left));
+		margin:0 map-get($val,margin-left);
+		
+	}
+	.swiper-pagination-bullet{
+		$val:(
+			width:6px,
+			height:6px,
+			background-color:#000
+			);
+		// @include convert-to-calc(width,map-get($val,width));
+		// @include convert-to-calc(height,map-get($val,height));
+		width:map-get($val,width);
+		height:map-get($val,height);
+		border-radius:100%;
+		background:map-get($val,background-color);
+	}
+	.swiper-pagination-bullet-active{
+		$val:(
+			width:8px,
+			height:8px,			
+			background-color:#fff
+			);
+		// @include convert-to-calc(width,map-get($val,width));
+		// @include convert-to-calc(height,map-get($val,height));
+		width:map-get($val,width);
+		height:map-get($val,height);
+		background:map-get($val,background-color);
+	}
+}

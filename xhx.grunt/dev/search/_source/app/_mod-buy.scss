@@ -1,0 +1,154 @@
+.mod-buy{
+	@extend %mod;
+	.hd{
+		i{
+			background-color:map-get($bgColor,buy-color);
+		}
+		.a-more{
+			color:map-get($bgColor,buy-color);
+		}
+	}
+	.bd{
+		@include convert-to-calc(padding,0,map-get($global,padding-left));
+	}
+}
+
+.car-list{
+	li{
+		$val:(
+			border-color:#e6e6e6
+			);
+		border-top:1px solid map-get($val,border-color);
+		&:first-child{
+			border-top:0 none;
+		}
+	}
+	a{
+		$val:(
+			padding-top:26px,
+			padding-bottom:18px,
+			border-color:#e6e6e6
+			);
+		@extend %clearfix;
+		display:block;
+		@include convert-to-calc(padding,map-get($val,padding-top),0,map-get($val,padding-bottom));
+		
+	}
+
+	.img-box{
+		$val:(
+			margin-right:15px,
+			width:214px,
+			height:172px
+			);
+		float:left;
+		@include convert-to-calc(margin-right,map-get($val,margin-right));
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		@extend %flexbox;
+		@extend %verticalCenter;
+		img{
+			display:block;
+			width:100%;
+			height:auto;
+			max-height:100%;
+		}
+	}
+	.info{
+		$val:(
+				margin-top:10px,
+				color:#2f2f2f
+			);
+		overflow:hidden;
+		zoom:1;
+		@include convert-to-calc(margin-top,map-get($val,margin-top));
+		color:map-get($val,color);			
+		text-align:right;
+		dd{
+			overflow:hidden;
+		}
+		.tit{
+			$val:(
+				height:40px,
+				min-height:40px,
+				max-height:80px,
+				font-size:28px
+				);
+			overflow:hidden;
+			text-align:right;
+			@include convert-to-calc(min-height,map-get($val,min-height));
+			@include convert-to-calc(max-height,map-get($val,max-height));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+			@include convert-to-calc(line-height,map-get($val,height));
+		
+		}
+		.desc{
+			$val:(
+				margin-top:15px,
+				height:30px,
+				color:#999
+				);
+			@include convert-to-calc(margin,map-get($val,margin-top),0);
+			@include convert-to-calc(height,map-get($val,height));
+			color:map-get($val,color);
+			@include convert-to-calc(line-height,map-get($val,height));
+		
+		}
+		.spec{
+			$val:(
+				margin-top:15px,
+				height:30px,
+				color:#999
+				);
+			@include convert-to-calc(margin,map-get($val,margin-top),0);
+			@include convert-to-calc(height,map-get($val,height));
+			color:map-get($bgColor,buy-color);
+			@include convert-to-calc(line-height,map-get($val,height));
+		}
+		.price{
+			$val:(
+				height:52px,
+				font-size:20px
+				);
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(line-height,map-get($val,height));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+			.type{
+				$val:(
+					margin-right:10px,
+					width:118px,
+					height:40px,
+					border-radius:5px,
+					font-size:24px,
+					color:#fff
+					);
+				@include inline-block;
+				@include convert-to-calc(margin-right,map-get($val,margin-right));
+				@include convert-to-calc(width,map-get($val,width));
+				@include convert-to-calc(height,map-get($val,height));
+				background-color:map-get($bgColor,buy-color);
+				color:map-get($val,color);
+				text-align:center;
+				@include convert-to-calc(line-height,map-get($val,height));
+				@include convert-to-calc(font-size,map-get($val,font-size));
+				border-radius:map-get($val,border-radius);
+				vertical-align:text-bottom;
+			}
+			.money{
+				$val:(
+					color:#ff6d00
+					);
+				color:map-get($val,color);			
+			}
+			em{
+				$val:(
+					margin-right:6px,
+					font-size:48px
+					);
+				@include convert-to-calc(margin-right,map-get($val,margin-right));
+				@include convert-to-calc(font-size,map-get($val,font-size));
+			}
+		}
+	}
+
+}

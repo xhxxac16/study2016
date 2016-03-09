@@ -1,0 +1,29 @@
+.mod-login{
+	background-color:#fff;
+	ul{
+		@extend %flexbox;
+	}
+	li{
+		$val:(
+			height:88px,
+			font-size:28px
+			);
+		@include flexboxChild(1);
+		@include convert-to-calc(height,map-get($val,height));
+		@include convert-to-calc(line-height,map-get($val,height));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		text-align:center;
+	}
+	a{
+		$val:(
+			color:#56606d
+			);
+		color:map-get($val,color);
+	}
+	.a-name{
+		$val:(
+			color:#2fabf1
+			);
+		color:map-get($val,color);
+	}
+}

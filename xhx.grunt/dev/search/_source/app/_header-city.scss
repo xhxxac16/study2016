@@ -1,0 +1,103 @@
+.header-city{
+	display:none;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:5;
+	height:100%;
+	background-color:#fff;
+	.city-nav{
+		$val:(
+			height:96px,
+			bgcolor-begin:#0094f8,
+			bgcolor-end:rgba(0,182,243,1),
+			color:#fff,
+			font-size:30px
+		);
+		position:relative;
+		@include convert-to-calc(height,map-get($val,height));
+		@include gra(map-get($val,bgcolor-begin),map-get($val,bgcolor-end));
+		text-align:center;
+		color:map-get($val,color);
+		@include convert-to-calc(font-size,map-get($val,font-size));		
+		@include convert-to-calc(line-height,map-get($val,height));
+
+		.btn-back{
+			position:absolute;
+			left:0;
+			top:0;
+			@include convert-to-calc(padding,0,map-get($global,padding-left));
+			.arrow-left{
+				$val:(
+						width:18px,
+						border-width:4px,
+						color:#fff,
+						border-radius:2px
+					);
+				@include borderArrow(map-get($val,width),map-get($val,border-width),map-get($val,color),map-get($val,border-radius));
+				@include hack(transform,rotate(135deg));
+			}
+		}
+	}
+	
+}
+
+.city-box{
+	.hd{
+		$val:(
+			height:80px,
+			bg-color:#f6f6f6,
+			color:#8a8a8a,
+			font-size:28px
+			);
+		@include convert-to-calc(padding,0,map-get($global,padding-left));
+		@include convert-to-calc(height,map-get($val,height));
+		background-color:map-get($val,bg-color);
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		color:map-get($val,color);
+		@include convert-to-calc(line-height,map-get($val,height));
+		
+	}
+	.bd{
+		$val:(
+			bg-color:#fff,
+			border-color:#f0f0f0,
+			);
+		@extend %borderbox;
+		overflow:hidden;
+		background-color:map-get($val,bg-color);
+		border-bottom:1px solid map-get($val,border-color);
+		@include boxShadow(0 2px 6px rgba(0,0,0,.08));
+		ul{
+			width:100%;
+			overflow-y:auto;
+			margin-bottom:-1px;
+			@extend %clearfix;
+		}
+		li{
+			$val:(
+				height:72px,
+				border-color:#f0f0f0,
+				color:#333,
+				font-size:26px
+				);
+			float:left;
+			width:33%;
+			@include convert-to-calc(height,map-get($val,height));
+			@include convert-to-calc(font-size,map-get($val,font-size));
+			border-bottom:1px solid map-get($val,border-color);
+			border-right:1px solid map-get($val,border-color);
+			color:map-get($val,color);
+			@include convert-to-calc(line-height,map-get($val,height));
+			text-align:center;
+			a{
+				display:block;
+				@include convert-to-calc(height,map-get($val,height));
+				color:map-get($val,color);				
+			}
+			&:nth-child(3n){
+				border-right:0 none;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "npmscript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "echo here it comes!",
+    "postinstall": "echo there it goes!",
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "domready": "^1.0.8"
+  }
+}

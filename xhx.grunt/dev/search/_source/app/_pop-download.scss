@@ -1,0 +1,69 @@
+.pop-download{
+	$val:(
+		height:126px,
+		bgcolor-begin:rgba(255,255,255,0),
+		bgcolor-end:rgba(0,0,0,.5),
+		);
+	// display:none;
+	position:fixed;
+	left:0;
+	bottom:0;
+	z-index:4;
+	width:100%;
+	overflow:hidden;
+	@extend %borderbox;
+	@include convert-to-calc(height,map-get($val,height));
+	@include gra(map-get($val,bgcolor-begin),map-get($val,bgcolor-end));
+	text-align:right;
+	.btn-close{
+		$val:(
+			top:0,
+			right:0,
+			padding-left:10px,
+			width:34px,
+			height:34px,
+			// bg-color:#000,
+			// border-radius:15px,
+			// font-size:28px,
+			// color:#fff
+			);
+		position:absolute;
+		@include convert-to-calc(top,map-get($val,top));
+		@include convert-to-calc(right,map-get($val,right));
+		@include convert-to-calc(padding,map-get($val,padding-left));
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		// background-color:map-get($val,bg-color);
+		// @include convert-to-calc(border-radius,map-get($val,border-radius));		
+		// color:map-get($val,color);
+		i{
+			@include inline-block;
+			@include iconItem($skin,"btn-close");
+		}
+	}
+	.btn-app{
+		$val:(
+			top:38px,
+			right:38px,
+			width:220px,
+			height:68px,
+			bgcolor-begin:#2eaaf1,
+			bgcolor-end:#2ca7ef,
+			border-radius:8px,
+			font-size:28px,
+			color:#fff
+			);
+		position:absolute;
+		@include convert-to-calc(top,map-get($val,top));
+		@include convert-to-calc(right,map-get($val,right));
+		@include convert-to-calc(width,map-get($val,width));
+		@include convert-to-calc(height,map-get($val,height));
+		@include gra(map-get($val,bgcolor-begin),map-get($val,bgcolor-end));
+		@include convert-to-calc(border-radius,map-get($val,border-radius));
+		@include convert-to-calc(font-size,map-get($val,font-size));
+		text-align:center;
+		color:map-get($val,color);
+		@include convert-to-calc(line-height,map-get($val,height));
+		text-shadow:0 2px 4px rgba(0,0,0,.3);
+	}	
+}
