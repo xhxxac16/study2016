@@ -47,3 +47,8 @@ Linux系统信息查看命令
 # chkconfig --list | grep on #列出所有启动的系统服务
 程序
 # rpm -qa #查看所有安装的软件包
+
+vi /etc/profile
+添加 export PATH="/usr/local/mongodb/bin:$PATH"
+:wq保存退出
+source /etc/profile 生效
