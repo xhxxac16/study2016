@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Bookshop - Your Online Bookshop</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" ng-init="books=['Effective Java','Year without Pants','Confessions of public speaker','JavaScript Good Parts']">
+		<h2>Your Online Bookshop</h2>
+		<ul class="unstyled">
+			<li ng-repeat="book in books">
+				{{book}}
+			</li>
+		</ul>
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+</body>
+</html>
