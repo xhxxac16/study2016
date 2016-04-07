@@ -1,0 +1,12 @@
+{
+  "name": "study-npm",
+  "version": "1.0.0",
+  "description": "npm init -y\r 想生成默认package.json，可以执行",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
