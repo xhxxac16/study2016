@@ -1,12 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-class Main extends React.Component {
-	render() {
-		return <h1>Hello, world!!</h1>;
-	}
-}
+// ES6
+import MyModule from './modules/MyModule.js';
 
-ReactDOM.render(
-	<Main />,
-	document.getElementById('container')
-);
+// CommonJS
+// var MyModule = require('./modules/MyModule.js');
