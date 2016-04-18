@@ -14,7 +14,7 @@ var config = {
 		alias:{}
 	},
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, './build'),
 		filename: 'bundle.js',
 	},
 	module: {
@@ -29,6 +29,11 @@ var config = {
 		{
 			test: /\.jsx?$/,
 			loaders: ['jsx?harmony&stripTypes', 'flowcheck'],
+			exclude: /node_modules/
+		},
+		{
+			test: /\.js$/,
+			loaders: ['react-hot', 'babel'],
 			exclude: /node_modules/
 		},
 		{
@@ -56,6 +61,25 @@ var config = {
 		noParse:[],
 		loaders:[]
 	}
+	// 输出压缩版
+	output: {
+		path: './dist',
+		filename: 'awesomemular.min.js',
+		libraryTarget: 'umd',
+		library: 'Awesomemular',
+	},
+	plugins: [
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			},
+		}),
+	],
+	// //避免合并大型依赖
+	// externals: {
+	// 	react: 'react',
+	// 	'react/addons': 'react'
+	// },
 };
 // 通过在第一部分路径的依赖和解压
 // 就是你像引用 node 模块一样引入到你的代码中
