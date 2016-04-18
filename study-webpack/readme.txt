@@ -47,9 +47,24 @@ https://fakefish.github.io/react-webpack-cookbook/index.html
 加载css
 npm install css-loader style-loader --save-dev
 
-npm install sass-loader
+npm install sass-loader --save-dev
 
-npm i flowcheck-loader
+npm install --save-dev flowcheck-loader
 
 安装加载器
 npm install url-loader --save-dev
+
+安装这个暴露全局加载器
+npm install expose-loader --save-dev
+
+
+windows下设置环境变量
+SET NODE_ENV=production
+
+
+console.log(process.env.NODE_ENV);
+
+通过NODE_ENV可以来设置环境变量（默认值为development）。 一般我们通过检查这个值来分别对开发环境和生产环境下做不同的处理。可以在命令行中通过下面的方式设置这个值：
+
+linux & mac: export NODE_ENV=production
+windows:set NODE_ENV=production
