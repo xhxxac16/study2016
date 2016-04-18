@@ -43,3 +43,13 @@ package.json
 
 
 https://fakefish.github.io/react-webpack-cookbook/index.html
+
+加载css
+npm install css-loader style-loader --save-dev
+
+npm install sass-loader
+
+npm i flowcheck-loader
+
+安装加载器
+npm install url-loader --save-dev

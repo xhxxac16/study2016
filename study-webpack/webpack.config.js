@@ -21,6 +21,23 @@ var config = {
 			query: {
 				presets: ['es2015', 'react']
 			}
+		},
+		{
+			test: /\.jsx?$/,
+			loaders: ['jsx?harmony&stripTypes', 'flowcheck'],
+			exclude: /node_modules/
+		},
+		{
+			test: /\.css$/, //Only .css files
+			loader: 'style!css' //Run both loaders
+		},
+		//sass
+		{
+			test: /\.scss$/, 
+			loader: 'style!css!sass' 
+		},{
+			test:/\.(png|jpg)/,
+			loader: 'url?limit=25000' //limit 参数是告诉它图片如果不大于 25KB 的话要自动在它从属的 css 文件中转成 BASE64 字符串。
 		}],
 		noParse:[pathToReact]
 	}
