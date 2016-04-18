@@ -1,5 +1,10 @@
 // ES6
-import MyModule from './modules/MyModule.js';
+import React from 'react';
+// import ReactDOM from 'react-dom';
+import Hello from './component.jsx';
 
-// CommonJS
-// var MyModule = require('./modules/MyModule.js');
+main();
+function main(){
+	// ReactDOM.render(<Hello />, document.getElementById('app'));
+	React.render(<Hello />, document.getElementById('app'));
+}

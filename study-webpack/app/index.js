@@ -1,30 +1,14 @@
-var React = require('react');
-var TodoItem = require('./TodoItem.jsx');
+var React = require('react/addons');
 
 module.exports = React.createClass({
-	getInitialState() {
-		return {
-			todoItems: [
-				{
-					task: 'Learn React',
-				},
-				{
-					task: 'Learn Webpack',
-				},
-				{
-					task: 'Conquer World',
-				}
-			],
-			owner: 'John Doe',
-		};
-	},
+	mixins:[React.addons.LinkedStateMixin],
 	render() {
 		var todoItems = this.state.todoItems;
 		var owner = this.state.owner;
 
 		return <div>
 					<div className='ChangeOwner'>
-						<input type='text' defaultValue={owner} onChange={this.updateOwner} />
+						<input type='text' valueLink={this.linkeState('owner')} />
 					</div>
 
 					<div className='TodoItems'>
@@ -37,10 +21,5 @@ module.exports = React.createClass({
 						</ul>
 					</div>
 				</div>;
-	},
-	updateOwner() {
-		this.setState({
-			owner: e.target.value,
-		});
 	},
 });
