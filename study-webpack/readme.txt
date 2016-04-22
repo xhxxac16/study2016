@@ -68,3 +68,15 @@ console.log(process.env.NODE_ENV);
 
 linux & mac: export NODE_ENV=production
 windows:set NODE_ENV=production
+
+
+http://zhizhi.betahouse.us/2015/09/27/yi-webpackde-demos/##demo08-environment-flags-source
+
+webpack – 在开发时构建一次
+webpack -p – 再生产环境中构建 (minification微小)
+webpack --watch – 监听文件改动，持续构建
+webpack -d – 引用源码的映射
+webpack --colors – for making things pretty
+
+
+demo04
