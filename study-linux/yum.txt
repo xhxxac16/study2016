@@ -1,0 +1,4 @@
+ 先清空缓存
+ yum clean all
+ 
+ yum makecache    //再更新缓存把服务器的包信息下载到本地电脑缓存起来

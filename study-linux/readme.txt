@@ -52,3 +52,7 @@ vi /etc/profile
 添加 export PATH="/usr/local/mongodb/bin:$PATH"
 :wq保存退出
 source /etc/profile 生效
+
+ls -la 查看所有文件
+删除swp文件
+rm -i .day_cut.pc.swp
