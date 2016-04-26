@@ -2,7 +2,11 @@ var webpack = require('webpack');
 var devFlagPlugin = new webpack.DefinePlugin({  
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 });
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+
+var CommonsChunkPlugin =require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
 	enry: {
 		bundle: './main.js',
@@ -40,5 +44,16 @@ module.exports = {
 	// 		}
 	// 	})
 	// ]
-	 plugins: [devFlagPlugin]
+	//plugins: [devFlagPlugin]
+	// plugins:[
+	// 	new HtmlwebpackPlugin({
+	// 		title: 'Webpack-demos'
+	// 	}),
+	// 	new OpenBrowserPlugin({
+	// 		URL: 'HTTP://localhost:8080'
+	// 	})
+	// ]
+	plugins: [
+		new CommonsChunkPlugin('init.js')
+	]
 };

@@ -78,5 +78,24 @@ webpack --watch – 监听文件改动，持续构建
 webpack -d – 引用源码的映射
 webpack --colors – for making things pretty
 
+demo08
+# Linux & Mac
+$ env DEBUG=true webpack-dev-server
 
-demo04
+# Windows
+$ set DEBUG=true && webpack-dev-server
+
+
+npm i -g react-hot-loader react babel-loader
+React Hot Loader是一个webpack的插件，他可以让你在编辑react组件时，立即刷新而不会丢失状态
+
+http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651220238&idx=1&sn=ebdba528f199e10f6b273c3a6fd04650&scene=23&srcid=0419RbNuqzWx73S8nguyXweq#rd
+
+Webpack 的两个主要思想：
+
+所有的一切都是模块(module) —— 就像 JS 可以模块化一样，所有的一切 (CSS, Images, HTML) 都可以是模块。就是这样，你可以 require('myjsfile.js') 或者 require('myCSSfile.css')。这意味着我们可以把任何部件分割成更小的可管理的模块用来复用等等。
+
+按需加载 通常来说模块打包只能将你所有的模块打包成单个大的”bundle.js”文件。但是在现实世界中，”bundle.js”可能达到 10MB-15MB 导致过长的加载时间。所以 Webpack 有专门的功能用来分割你的代码并且生成多个打包文件，同样也能异步加载部分模块，所以你只需要”按需加载”即可。
+
+
+// 当代码更新的时候，这三种选项都会打包新的文件，但是又有不同。// 1. 不帮你刷新页面webpack-dev-server// 2. 直接帮你刷新整个页面webpack-dev-server --inline// 3. 仅仅刷新更新过的模块，如果需要的话再刷新整个页面webpack-dev-server --inline --hot
