@@ -98,4 +98,4 @@ Webpack 的两个主要思想：
 按需加载 通常来说模块打包只能将你所有的模块打包成单个大的”bundle.js”文件。但是在现实世界中，”bundle.js”可能达到 10MB-15MB 导致过长的加载时间。所以 Webpack 有专门的功能用来分割你的代码并且生成多个打包文件，同样也能异步加载部分模块，所以你只需要”按需加载”即可。
 
 
-// 当代码更新的时候，这三种选项都会打包新的文件，但是又有不同。// 1. 不帮你刷新页面webpack-dev-server// 2. 直接帮你刷新整个页面webpack-dev-server --inline// 3. 仅仅刷新更新过的模块，如果需要的话再刷新整个页面webpack-dev-server --inline --hot
+// 当代码更新的时候，这三种选项都会打包新的文件，但是又有不同。// 1. 不帮你刷新页面webpack-dev-server// 2. 直接帮你刷新整个页面webpack-dev-server --inline// 3. 仅仅刷新更新过的模块，如果需要的话再刷新整个页面webpack-dev-server --inline --
