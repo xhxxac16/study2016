@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>placeholder</title>
+	<script src="js/placeholder.js"></script>
+</head>
+<body>
+	<img src="image_origin.png" onerror="this.src=placeholder.getData({text: 'Image 404'})">
+	<img options="size=256x128&text=Hello!" class="placeholder" />
+	<img id="img_holder" src="">
+    <script type="text/javascript">
+        var opts = {
+            size: '256x128',
+            font: {
+                style: 'oblique',
+            },
+            text: 'Hello=&World'
+        }
+        document.getElementById('img_holder').setAttribute('src', window.placeholder.getData(opts));
+    </script>
+	<img options="size=256x128&text=Hello%2525%26%3DWorld" class="placeholder" options="bgcolor=#2b5f07&text=%20&size=19x19">
+	<script>
+	 placeholder.render();
+		// var opts = {
+		//     size: '512x256',
+		//     bgcolor: '#ccc', 
+		//     color: '#969696',
+		//     text: 'Hello World, 你好',
+		//     fstyle:'oblique',
+		//     fweight: 'bold',
+		//     fsize:'40',
+		//     ffamily: 'consolas'
+		// }
+		// console.log(placeholder.getData(opts)) //get the base64 of the placeholder image.
+	</script>
+</body>
+</html>
