@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 1.9.0</title>
+</head>
+<body>
+    <script src="jquery-1.9.0.js"></script>
+    <script>
+        $(function(){
+
+               //  $.each([1, 2, 3], function(key, value){
+               //      console.log(this + "[" + key + "]=" + value);
+               //      // return false;
+               //  });
+
+               //  $.each([1, 2, 3], function(arg1, arg2){
+               //      console.log(this + "," + arg1 + "," + arg2);
+               //  }, [4, 5]);
+
+               //  // var array = [undefined, 1];
+               //  var array = [];
+               //        array[1] = 1;
+               //        console.log(array.indexOf(undefined) )
+               //        console.log(array[0] == undefined)
+               //      console.log($.inArray(undefined, array));
+
+               // console.log($.grep( [0,1,2], function(n,i){
+               //    return n <= 0;
+               //  }, true));
+
+               // var arr = [1, 2];
+               //  var first={length:3};first[0] = 1; first[1] = 2; first[2] = 3;
+               //  var sec = [2, 3, 4];
+               //  console.log($.merge(arr, first));
+               //  console.log($.merge(arr, sec));
+
+
+            // function a(){
+            //   console.log(arguments);//输出[1,2,3,4,5]
+            // }
+            // var b = $.proxy(a, this, 1, 2, 3);//这里arguments = [a, this, 1, 2, 3];
+            // b(4,5);//这里arguments = [4,5];
+
+                // typeof 1 == 'number'  //true
+                // typeof {} == 'object'  //true
+                // typeof [] == 'object'  //true
+
+                // (1).toString() == "1"  //true
+                // ({}).toString() == "[object Object]"  //true
+                // // 再针对一些边界的测试
+                // typeof null == "object"   //true
+                // typeof undefined == "undefined"   //true
+                // (null).toString()    //非法
+                // (undefined).toString()    //非法
+
+                // //再看看很诡异的几个：
+                // ([]).toString()== ""   //true
+                // (new Error()).toString() == "Error"   //true
+
+                // // 出现以上两个的结果的原因是，Array跟Error类重写了toString方法
+                // // 如果用Object的toString方法的话，就是一下结果
+                // Object.prototype.toString.call([]) == "[object Array]"   //true
+                // Object.prototype.toString.call(new Error()) == "[object Error]"   //true
+
+
+                var Plugin = function(opt){
+                    // opt为传入的配置
+                    this.opt = $.extend({
+                        'titile': '默认标题',
+                        'content': '默认内容'
+                    }, opt);
+                };
+
+                var p = new Plugin({title: '传入标题'});
+        });
+    </script>
+</body>
+</html>
