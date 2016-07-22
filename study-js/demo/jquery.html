@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery demo</title>
+</head>
+<body>
+    <div></div>
+    <script src="jquery-1.9.0.js"></script>
+    <script>
+    // demo-1.js
+    // 在jQuery源码中，“jQuery”或者“$”，这个变量其实是一个函数，不信你可以叫咱们的老朋友typeof验证一下。
+    console.log(typeof($));  //function
+    console.log( typeof $.trim);  //function
+
+
+    // demo-3.js
+    var $div =$('div');
+    $div.attr('myName', 'wangfupeng');
+
+
+    myjQuery.prototype.attr = function() {
+            //...
+    };
+    $('div') = new myjQuery();
+    </script>
+</body>
+</html>
