@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在CSS3中唯一引入的伪元素是::selection</title>
+    <style>
+        div::selection{
+            background: red;
+            color: #fff;
+        }
+
+        div::-moz-selection{
+            background: red;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, voluptates neque iste eligendi illo earum sunt. Facilis, possimus odit eveniet, in sequi vel vitae ducimus fugiat enim, deserunt numquam ipsam.</div>
+<div>::selection在IE家族中，只有IE9+版本支持，在Firefox中需要加上其前缀“-moz”，查阅相关w3c官方资料，并没有对这个属性的解说资料，只知道这个属性被规纳在CSS的伪类选择器中。“::selection”只能设置两个属性，一个就是background,另一个就是color属性，设置其他属性是没有任何效果的。</div>
+<p>来自：http://www.w3cplus.com/content/css-selection</p>
+</body>
+</html>
