@@ -1,6 +1,6 @@
 /*
  * Created: 2016-7-20
- * Update: 2016-7-21
+ * Update: 2016-7-23
  * Author: Amanda
  * Lever:    demo-1
  * Description: 深入理解javascript原型和闭包（1）——一切都是对象
@@ -42,6 +42,8 @@ var obj = {
         year: 1988
     }
 };
+console.log(obj); //Object {a: 10, b: function(x){},c: {name:,year:,__proto__:Object},__proto__:Object}
+console.log(typeof obj); //Object
 
 var fn = function(){
     alert(100);
