@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js打开新窗口，防止被浏览自阻止</title>
+    <script src="js/jquery_1_8_3.js"></script>
+</head>
+<body>
+	<ul>
+		<li><a class="a-login" data-dataKey="clickOpenWin.dataKey" href="javascript:;" target="_blank">登录</a></li>
+	</ul>
+	<form class="a-click" action="http://www.baidu.com" target="_blank"><input type="hidden" id="isHidden" value="yiwo"/> </form>
+	<script>
+		$(function(){
+			// 没有验证
+			// var clickOpenWin = function(f){
+			// 	    var dataKey = "clickOpenWin.dataKey"
+			// 	    var me = $(this);
+			// 	    var A = me.data(dataKey);
+
+			// 	    var returnData = null;
+			// 	    if(!A){
+			// 	        A = $("");
+			// 	        me.data(dataKey, A);
+			// 	        A.click(function(e){
+			// 	            if(returnData){
+			// 	                A.attr("href", returnData);
+			// 	            }else {
+			// 	                A.before(me);
+			// 	                e.stop();
+			// 	            }
+			// 	        });
+			// 	    }
+			// 	    me.mouseover(function(){$(this).before(A).appendTo(A);});
+			// 	    me.mouseout(function(){A.before($(this));});
+			// 	    me.click(function(){
+			// 	        A.attr("href", "#|");
+			// 	        returnData = f.apply(this, arguments);
+			// 	    });
+			// 	};
+
+				// 失败
+				// $.ajax({
+				// 	url: "/exchange.htm",
+				// 	type: "GET",
+				// 	dataType: "json",
+				// 	success:function(data){
+				// 		if(data.result){
+				// 			// var openLink = $(".a-login");
+				// 			// 	openLink.attr('href', 'http://www.baidu.com');
+				// 			// 	openLink[0].click();
+
+				// 			var openLink = $(".a-click");
+				// 				openLink.submit();
+				// 		}
+				// 	}
+				// });
+
+				// 成功 http://my.oschina.net/u/1162669/blog/205643
+				//  第一种方法点击直接触发window.open()或者$(form).submit();
+				//  第二种方法 若是点击发送ajax触发方法，这里要强调一下不管是自动发送ajax还是手动发送ajax成功之后调用的方法内部用Window.open()或者$(form).submit()都可能会被认为是广告。下面我的解决方法是，手动同步发送ajax，之后将ajax的值赋予变量，再在ajax方法之后调用Window.open()或者$(form).submit()就可以避免这种问题。
+				$('.a-login').on('click',function(){
+						var a;
+						$.ajax({
+						url: "/exchange.htm",
+						type: "GET",
+						dataType: "json",
+						async: false,
+						success:function(data){
+							if(data.result){
+								a = true;
+							}
+						}
+					});
+					a && window.open('http://www.baidu.com');
+					//a &&　$('.a-click').submit();
+					return false;
+				});
+
+				
+		});
+	</script>
+</body>
+</html>
