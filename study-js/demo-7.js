@@ -1,6 +1,6 @@
 /*
- * Created: 2016-7-23
- * Update: 2016-7-23
+ * Created: 2016-7-25
+ * Update: 2016-7-25
  * Author: Amanda
  * Lever:    demo-7
  * Description: 深入理解javascript原型和闭包（7）——原型的灵活性
