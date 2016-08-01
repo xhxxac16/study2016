@@ -77,6 +77,25 @@
 					return false;
 				});
 
+
+				// function sleep(d){
+				// 	for(var t = Date.now();Date.now() - t <= d;);
+				// }
+
+
+				// // 时间设置长点依旧会出现阻止，短点就不会出现
+				// $('.a-login').on('click',function(){
+				// 	// sleep(5000); 
+				// 	sleep(1000);
+				// 	window.open('http://www.baidu.com');
+				// 	// setTimeout(function(){
+				// 	// 	window.open('http://www.baidu.com');
+				// 	// },0);
+				// 	return false;
+				// });
+
+				// sleep firefox44.02不阻止 ie不会阻止 chorme版本51.0.2704.103 m 1000会阻止
+				// setTimeout firefox44.02 2000会阻止 ie 2000会阻止 chrome版本51.0.2704.103 m 0会阻止
 				
 		});
 	</script>
